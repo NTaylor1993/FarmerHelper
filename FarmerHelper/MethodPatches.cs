@@ -150,7 +150,6 @@ namespace FarmerHelper
                         if (!added)
                         {
                             question = string.Format(SHelper.Translation.Get("animals-need-harvesting"), question);
-                            question += $"{animal.type.Value}, {animal.Name}, {animal.currentProduce.Value}";
                             added = true;
                         }
                     }
