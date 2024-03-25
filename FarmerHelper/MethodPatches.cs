@@ -100,6 +100,18 @@ namespace FarmerHelper
                         }
                     }
                 }
+                foreach (TerrainFeature terrainFeature in Game1.getLocationFromName("IslandWest").terrainFeatures.Values)
+                {
+                    if (terrainFeature is HoeDirt && (terrainFeature as HoeDirt).crop != null && !(terrainFeature as HoeDirt).hasPaddyCrop() && (terrainFeature as HoeDirt).state.Value == 0 && (terrainFeature as HoeDirt).crop.currentPhase.Value < (terrainFeature as HoeDirt).crop.phaseDays.Count - 1)
+                    {
+                        logMessage.Add($"Crop with harvest index {(terrainFeature as HoeDirt).crop.indexOfHarvest.Value} at Greenhouse {terrainFeature.Tile.X},{terrainFeature.Tile.Y} is unwatered");
+                        if (!added)
+                        {
+                            added = true;
+                            question = string.Format(SHelper.Translation.Get("plants-need-watering"), question);
+                        }
+                    }
+                }
             }
             if (Config.WarnAboutPlantsUnharvestedBeforeSleep)
             {
@@ -119,6 +131,18 @@ namespace FarmerHelper
                     }
                 }
                 foreach (TerrainFeature terrainFeature in Game1.getLocationFromName("Greenhouse")?.terrainFeatures.Values)
+                {
+                    if (terrainFeature is HoeDirt && (terrainFeature as HoeDirt).readyForHarvest())
+                    {
+                        logMessage.Add($"Crop with harvest index {(terrainFeature as HoeDirt).crop.indexOfHarvest.Value} at Greenhouse {terrainFeature.Tile.X},{terrainFeature.Tile.Y} is ready to harvest");
+                        if (!added)
+                        {
+                            added = true;
+                            question = string.Format(SHelper.Translation.Get("plants-ready-for-harvest"), question);
+                        }
+                    }
+                }
+                foreach (TerrainFeature terrainFeature in Game1.getLocationFromName("IslandWest").terrainFeatures.Values)
                 {
                     if (terrainFeature is HoeDirt && (terrainFeature as HoeDirt).readyForHarvest())
                     {
