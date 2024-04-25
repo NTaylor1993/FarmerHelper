@@ -1,0 +1,9 @@
+{
+  "too-late": "[늦음] {0}",
+  "too-late-message": "{0}를 심기에 너무 늦었습니다!",
+  "animals-outside": "{0} 아직 야외에 동물이 있습니다!",
+  "animals-need-petting": "{0} 아직 쓰다듬을 동물이 있습니다!",
+  "animals-need-harvesting": "{0} 아직 수확해야 할 동물이 있습니다!",
+  "plants-need-watering": "{0} 물 주어야 할 식물이 있습니다!",
+  "plants-ready-for-harvest": "{0} 수확할 준비가 된 식물이 있습니다!"
+}
