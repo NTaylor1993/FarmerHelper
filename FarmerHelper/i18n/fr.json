@@ -1,0 +1,9 @@
+{
+  "too-late": "[Tardif] {0}",
+  "too-late-message": "Trop tard pour planter {0} !",
+  "animals-outside": "{0} Vous avez des animaux toujours à l’extérieur !",
+  "animals-need-petting": "{0} Vous avez des animaux à câliner !",
+  "animals-need-harvesting": "{0} Vous avez des animaux qui peuvent fournir des produits !",
+  "plants-need-watering": "{0} Vous avez des plantes qui nécessitent d’être arrosées !",
+  "plants-ready-for-harvest": "{0} Vous avez des plantes prêtes à être récoltées !"
+}
